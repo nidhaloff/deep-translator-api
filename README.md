@@ -1,2 +1,2 @@
 # deep-translator-api
-API based on the deep-translator pakcage
+API based on the deep-translator pakcage and fastapi
