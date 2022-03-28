@@ -11,7 +11,7 @@ from deep_translator import (
     QcriTranslator,
 )
 
-from models import (
+from models.requests import (
     MicrosoftRequest,
     GoogleRequest,
     DeeplRequest,
