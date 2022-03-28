@@ -23,6 +23,8 @@ from models.requests import (
     MyMemoryRequest,
     QcriRequest,
 )
+
+from models.responses import TranslationResponse
 from fastapi import FastAPI
 import uvicorn
 
@@ -35,7 +37,7 @@ async def root():
     return "Server is running. Go to /docs to try out the API"
 
 
-@app.post("/google/")
+@app.post("/google/", response_model=TranslationResponse)
 def google_translate(request: GoogleRequest):
     t = GoogleTranslator(
         source=request.source, target=request.target, proxies=request.proxies
@@ -43,7 +45,7 @@ def google_translate(request: GoogleRequest):
     return {"translation": t.translate(text=request.text)}
 
 
-@app.post("/microsoft/")
+@app.post("/microsoft/", response_model=TranslationResponse)
 def microsoft_translate(request: MicrosoftRequest):
     t = MicrosoftTranslator(
         source=request.source,
@@ -54,7 +56,7 @@ def microsoft_translate(request: MicrosoftRequest):
     return {"translation": t.translate(text=request.text)}
 
 
-@app.post("/deepl/")
+@app.post("/deepl/", response_model=TranslationResponse)
 def deepl_translate(request: DeeplRequest):
     t = DeeplTranslator(
         api_key=request.api_key,
@@ -65,7 +67,7 @@ def deepl_translate(request: DeeplRequest):
     return {"translation": t.translate(text=request.text)}
 
 
-@app.post("/mymemory/")
+@app.post("/mymemory/", response_model=TranslationResponse)
 def mymemory_translate(request: MyMemoryRequest):
     t = MyMemoryTranslator(
         source=request.source, target=request.target, proxies=request.proxies
@@ -73,7 +75,7 @@ def mymemory_translate(request: MyMemoryRequest):
     return {"translation": t.translate(text=request.text)}
 
 
-@app.post("/libre/")
+@app.post("/libre/", response_model=TranslationResponse)
 def libre_translate(request: LibreRequest):
     t = LibreTranslator(
         api_key=request.api_key,
@@ -85,7 +87,7 @@ def libre_translate(request: LibreRequest):
     return {"translation": t.translate(text=request.text)}
 
 
-@app.post("/papago/")
+@app.post("/papago/", response_model=TranslationResponse)
 def papago_translate(request: PapagoRequest):
     t = PapagoTranslator(
         client_id=request.client_id,
@@ -96,7 +98,7 @@ def papago_translate(request: PapagoRequest):
     return {"translation": t.translate(text=request.text)}
 
 
-@app.post("/yandex/")
+@app.post("/yandex/", response_model=TranslationResponse)
 def yandex_translate(request: YandexRequest):
     t = YandexTranslator(
         api_key=request.api_key, source=request.source, target=request.target
@@ -104,7 +106,7 @@ def yandex_translate(request: YandexRequest):
     return {"translation": t.translate(text=request.text)}
 
 
-@app.post("/pons/")
+@app.post("/pons/", response_model=TranslationResponse)
 def pons_translate(request: PonsRequest):
     t = PonsTranslator(
         source=request.source, target=request.target, proxies=request.proxies
@@ -114,7 +116,7 @@ def pons_translate(request: PonsRequest):
     }
 
 
-@app.post("/linguee/")
+@app.post("/linguee/", response_model=TranslationResponse)
 def linguee_translate(request: LingueeRequest):
     t = LingueeTranslator(
         source=request.source, target=request.target, proxies=request.proxies
@@ -124,7 +126,7 @@ def linguee_translate(request: LingueeRequest):
     }
 
 
-@app.post("/qcri/")
+@app.post("/qcri/", response_model=TranslationResponse)
 def qcri_translate(request: QcriRequest):
     t = QcriTranslator(
         api_key=request.api_key, source=request.source, target=request.target
