@@ -13,7 +13,7 @@ class BaseRequest(BaseModel):
 class BaseRequestWithProxies(BaseRequest):
     """model that inherits BaseRequest props and add support for proxies"""
 
-    proxies: Optional[List[str]] = None
+    proxies: Optional[List[str]] = []
 
 
 class BaseRequestWithApiKey(BaseRequest):
