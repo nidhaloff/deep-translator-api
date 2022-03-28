@@ -29,8 +29,13 @@ from utils import get_translation
 from fastapi import FastAPI
 import uvicorn
 
+__version__ = "0.1.0"
 
-app = FastAPI()
+app = FastAPI(
+    title="deep-translator API",
+    version=__version__,
+    description="Official deep-translator API",
+)
 
 
 @app.get("/")
