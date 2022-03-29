@@ -26,6 +26,7 @@ from models.requests import (
 
 from models.responses import TranslationResponse
 from utils import get_translation, get_summary
+from metadata import title, description, contact, license_info
 from fastapi import FastAPI
 import uvicorn
 
@@ -46,15 +47,11 @@ LINGUEE = "linguee"
 
 # app object
 app = FastAPI(
-    title="deep-translator API",
+    title=title,
     version=__version__,
-    description="""
-
-    Official deep-translator API. Get multiple translations from multiple sources/translators
-    including google, msft, mymemory, libre, etc..
-
-    This API is based on the deep-translator python package (https://github.com/nidhaloff/deep-translator).
-    """,
+    description=description,
+    contact=contact,
+    license_info=license_info,
 )
 
 
