@@ -34,7 +34,13 @@ __version__ = "0.1.0"
 app = FastAPI(
     title="deep-translator API",
     version=__version__,
-    description="Official deep-translator API",
+    description="""
+    Official deep-translator API. Get multiple translations from multiple sources/translators
+    including google, msft, mymemory, libre, etc..
+
+    This API is based on the deep-translator python package (https://github.com/nidhaloff/deep-translator)
+    and the Fastapi package.
+    """,
 )
 
 
@@ -137,4 +143,4 @@ def qcri_translate(request: QcriRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=5000, log_level="info")
+    uvicorn.run(app, host="0.0.0.0", log_level="info")
