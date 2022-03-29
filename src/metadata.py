@@ -1,7 +1,7 @@
 title = "deep-translator API"
 contact = {
     "name": "Nidhal Baccouri",
-    "url": "https://www.linkedin.com/in/nidhal-baccouri-2b9735148/",
+    "url": "https://nidhalbacc.azurewebsites.net/",
     "email": "nidhalbacc@gmail.com",
 }
 
@@ -15,14 +15,40 @@ Official deep-translator API helps you get multiple translations and use differe
 
 This API is based on the [deep-translator](https://github.com/nidhaloff/deep-translator) python package.
 
-## Items
 
-You can **read items**.
+---
+**NOTE**
 
-## Users
+The project is free and it will always stay free.
+Please consider supporting the project -> [here](https://github.com/sponsors/nidhaloff) 🚀
+
+---
+
+## Supported Translators
+
+* **Google**
+* **DeepL**
+* **Microsoft**
+* **MyMemory**
+* **Linguee**
+* **Pons**
+* **Libre**
+* **Yandex**
+* **Papago**
+* **QCRI**
+
+## Translation
 
 You will be able to:
 
-* **Create users** (_not implemented_).
-* **Read users** (_not implemented_).
+* **Get translation using Google translate**.
+* **Get translation using DeepL**.
+* **Get translation using Microsoft translator**.
+* **Get translation using MyMemory**.
+* **Get translation using Linguee**.
+* **Get translation using Yandex**.
+* **Get translation using Pons**.
+* **Get translation using Papago**.
+* **Get translation using Libre translate**.
+* **Get translation using QCRI**.
 """

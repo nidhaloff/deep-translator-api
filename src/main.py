@@ -28,6 +28,7 @@ from models.responses import TranslationResponse
 from utils import get_translation, get_summary
 from metadata import title, description, contact, license_info
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 import uvicorn
 
 # API version
@@ -55,9 +56,9 @@ app = FastAPI(
 )
 
 
-@app.get("/", summary="root query just for testing purposes at the moment")
-async def root():
-    return "Server is running. Go to /docs to try out the API"
+@app.get("/", summary="show SwaggerUI (this page)")
+def home():
+    return RedirectResponse("/docs")
 
 
 @app.post(
