@@ -65,106 +65,94 @@ async def root():
 @app.post(
     f"/{GOOGLE}/", summary=get_summary(GOOGLE), response_model=TranslationResponse
 )
-def google_translate(request: GoogleRequest):
-    t = GoogleTranslator(
-        source=request.source, target=request.target, proxies=request.proxies
-    )
-    return get_translation(t, request.text)
+def google_translate(r: GoogleRequest):
+    t = GoogleTranslator(source=r.source, target=r.target, proxies=r.proxies)
+    return get_translation(t, r.text)
 
 
 @app.post(
     f"/{MICROSOFT}/", summary=get_summary(MICROSOFT), response_model=TranslationResponse
 )
-def microsoft_translate(request: MicrosoftRequest):
+def microsoft_translate(r: MicrosoftRequest):
     t = MicrosoftTranslator(
-        source=request.source,
-        target=request.target,
-        region=request.region,
-        proxies=request.proxies,
+        source=r.source,
+        target=r.target,
+        region=r.region,
+        proxies=r.proxies,
     )
-    return get_translation(t, request.text)
+    return get_translation(t, r.text)
 
 
 @app.post(f"/{DEEPL}/", summary=get_summary(DEEPL), response_model=TranslationResponse)
-def deepl_translate(request: DeeplRequest):
+def deepl_translate(r: DeeplRequest):
     t = DeeplTranslator(
-        api_key=request.api_key,
-        source=request.source,
-        target=request.target,
-        use_free_api=request.use_free_api,
+        api_key=r.api_key,
+        source=r.source,
+        target=r.target,
+        use_free_api=r.use_free_api,
     )
-    return get_translation(t, request.text)
+    return get_translation(t, r.text)
 
 
 @app.post(
     f"/{MYMEMORY}/", summary=get_summary(MYMEMORY), response_model=TranslationResponse
 )
-def mymemory_translate(request: MyMemoryRequest):
-    t = MyMemoryTranslator(
-        source=request.source, target=request.target, proxies=request.proxies
-    )
-    return get_translation(t, request.text)
+def mymemory_translate(r: MyMemoryRequest):
+    t = MyMemoryTranslator(source=r.source, target=r.target, proxies=r.proxies)
+    return get_translation(t, r.text)
 
 
 @app.post(f"/{LIBRE}/", summary=get_summary(LIBRE), response_model=TranslationResponse)
-def libre_translate(request: LibreRequest):
+def libre_translate(r: LibreRequest):
     t = LibreTranslator(
-        api_key=request.api_key,
-        source=request.source,
-        target=request.target,
-        use_free_api=request.use_free_api,
-        custom_url=request.custom_url,
+        api_key=r.api_key,
+        source=r.source,
+        target=r.target,
+        use_free_api=r.use_free_api,
+        custom_url=r.custom_url,
     )
-    return get_translation(t, request.text)
+    return get_translation(t, r.text)
 
 
 @app.post(
     f"/{PAPAGO}/", summary=get_summary(PAPAGO), response_model=TranslationResponse
 )
-def papago_translate(request: PapagoRequest):
+def papago_translate(r: PapagoRequest):
     t = PapagoTranslator(
-        client_id=request.client_id,
-        secret_key=request.secret_key,
-        source=request.source,
-        target=request.target,
+        client_id=r.client_id,
+        secret_key=r.secret_key,
+        source=r.source,
+        target=r.target,
     )
-    return get_translation(t, request.text)
+    return get_translation(t, r.text)
 
 
 @app.post(
     f"/{YANDEX}/", summary=get_summary(YANDEX), response_model=TranslationResponse
 )
-def yandex_translate(request: YandexRequest):
-    t = YandexTranslator(
-        api_key=request.api_key, source=request.source, target=request.target
-    )
-    return get_translation(t, request.text)
+def yandex_translate(r: YandexRequest):
+    t = YandexTranslator(api_key=r.api_key, source=r.source, target=r.target)
+    return get_translation(t, r.text)
 
 
 @app.post(f"/{PONS}/", summary=get_summary(PONS), response_model=TranslationResponse)
-def pons_translate(request: PonsRequest):
-    t = PonsTranslator(
-        source=request.source, target=request.target, proxies=request.proxies
-    )
-    return get_translation(t, request.text, return_all=request.return_all)
+def pons_translate(r: PonsRequest):
+    t = PonsTranslator(source=r.source, target=r.target, proxies=r.proxies)
+    return get_translation(t, r.text, return_all=r.return_all)
 
 
 @app.post(
     f"/{LINGUEE}/", summary=get_summary(LINGUEE), response_model=TranslationResponse
 )
-def linguee_translate(request: LingueeRequest):
-    t = LingueeTranslator(
-        source=request.source, target=request.target, proxies=request.proxies
-    )
-    return get_translation(t, request.text, return_all=request.return_all)
+def linguee_translate(r: LingueeRequest):
+    t = LingueeTranslator(source=r.source, target=r.target, proxies=r.proxies)
+    return get_translation(t, r.text, return_all=r.return_all)
 
 
 @app.post(f"/{QCRI}/", summary=get_summary(QCRI), response_model=TranslationResponse)
-def qcri_translate(request: QcriRequest):
-    t = QcriTranslator(
-        api_key=request.api_key, source=request.source, target=request.target
-    )
-    return get_translation(t, request.text)
+def qcri_translate(r: QcriRequest):
+    t = QcriTranslator(api_key=r.api_key, source=r.source, target=r.target)
+    return get_translation(t, r.text)
 
 
 if __name__ == "__main__":
