@@ -49,6 +49,7 @@ app = FastAPI(
     title="deep-translator API",
     version=__version__,
     description="""
+
     Official deep-translator API. Get multiple translations from multiple sources/translators
     including google, msft, mymemory, libre, etc..
 
