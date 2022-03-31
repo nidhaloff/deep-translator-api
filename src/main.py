@@ -11,6 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath("."))
 
 from deep_translator import (
     GoogleTranslator,
@@ -25,7 +29,7 @@ from deep_translator import (
     QcriTranslator,
 )
 
-from models.requests import (
+from src.models.requests import (
     MicrosoftRequest,
     GoogleRequest,
     DeeplRequest,
@@ -38,12 +42,13 @@ from models.requests import (
     QcriRequest,
 )
 
-from models.responses import TranslationResponse
-from utils import get_translation, get_summary
-from metadata import title, description, contact, license_info
+from src.models.responses import TranslationResponse
+from src.utils import get_translation, get_summary
+from src.metadata import title, description, contact, license_info
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 import uvicorn
+
 
 # API version
 __version__ = "0.1.0"
@@ -88,10 +93,7 @@ def google_translate(r: GoogleRequest):
 )
 def microsoft_translate(r: MicrosoftRequest):
     t = MicrosoftTranslator(
-        source=r.source,
-        target=r.target,
-        region=r.region,
-        proxies=r.proxies,
+        source=r.source, target=r.target, region=r.region, api_key=r.api_key
     )
     return get_translation(t, r.text)
 
@@ -169,4 +171,5 @@ def qcri_translate(r: QcriRequest):
 
 
 if __name__ == "__main__":
+
     uvicorn.run(app, host="0.0.0.0", log_level="info")

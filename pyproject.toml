@@ -8,7 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.8"
 fastapi = "^0.75.0"
-deep-translator = "^1.8.1"
+deep-translator = "^1.8.3"
 uvicorn = "^0.17.6"
 
 [tool.poetry.dev-dependencies]

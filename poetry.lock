@@ -114,7 +114,7 @@ unicode_backport = ["unicodedata2"]
 
 [[package]]
 name = "click"
-version = "8.1.0"
+version = "8.1.1"
 description = "Composable command line interface toolkit"
 category = "main"
 optional = false
@@ -133,7 +133,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "deep-translator"
-version = "1.8.1"
+version = "1.8.3"
 description = "A flexible free and unlimited python tool to translate between different languages in a simple way using multiple translators"
 category = "main"
 optional = false
@@ -484,7 +484,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "931dc47c11be2139cae13052a5eec0097554feddbb11dc33a3673852fa122630"
+content-hash = "b887ac90bfa70f7573465d644e592aa1d1c1728ced4be2aec699ed8821d0a6d2"
 
 [metadata.files]
 anyio = [
@@ -545,16 +545,16 @@ charset-normalizer = [
     {file = "charset_normalizer-2.0.12-py3-none-any.whl", hash = "sha256:6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"},
 ]
 click = [
-    {file = "click-8.1.0-py3-none-any.whl", hash = "sha256:19a4baa64da924c5e0cd889aba8e947f280309f1a2ce0947a3e3a7bcb7cc72d6"},
-    {file = "click-8.1.0.tar.gz", hash = "sha256:977c213473c7665d3aa092b41ff12063227751c41d7b17165013e10069cc5cd2"},
+    {file = "click-8.1.1-py3-none-any.whl", hash = "sha256:5e0d195c2067da3136efb897449ec1e9e6c98282fbf30d7f9e164af9be901a6b"},
+    {file = "click-8.1.1.tar.gz", hash = "sha256:7ab900e38149c9872376e8f9b5986ddcaf68c0f413cf73678a0bca5547e6f976"},
 ]
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 deep-translator = [
-    {file = "deep-translator-1.8.1.tar.gz", hash = "sha256:3a2e5dceb0b5f4f9e513108e82ef9b4f99f7fd7c202640e2af397cadaf30ecdc"},
-    {file = "deep_translator-1.8.1-py3-none-any.whl", hash = "sha256:7d498bff075c785687fdcc7d0c9d20ecc96d9102858f6a5e70a39ff3e569c45c"},
+    {file = "deep-translator-1.8.3.tar.gz", hash = "sha256:f584c3beb9b943c9391bba83174e7ae75231315d41793720200312c54fdbc0cd"},
+    {file = "deep_translator-1.8.3-py3-none-any.whl", hash = "sha256:7ea7b30622747c82f689c836ef164dd001569217da911646a6a32db1a2524c19"},
 ]
 distlib = [
     {file = "distlib-0.3.4-py2.py3-none-any.whl", hash = "sha256:6564fe0a8f51e734df6333d08b8b94d4ea8ee6b99b5ed50613f731fd4089f34b"},
