@@ -1,5 +1,5 @@
 """
-main module
+deep-translator-api
 """
 
 from src.main import app

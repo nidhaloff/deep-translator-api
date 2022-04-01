@@ -1,3 +1,7 @@
+"""
+main module: entry point of the API
+"""
+
 import sys
 import os
 
