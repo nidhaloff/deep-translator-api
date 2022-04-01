@@ -31,4 +31,5 @@ jobs:
 
       - name: Analysing the code with pylint
         run: |
+          source "$HOME/.poetry/env"
           poetry run pylint $(git ls-files '*.py')
