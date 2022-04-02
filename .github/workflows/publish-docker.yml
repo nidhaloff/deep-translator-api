@@ -1,7 +1,6 @@
 name: build and publish docker image to dockerhub
 
 on:
-  workflow_call:
   workflow_dispatch:
   push:
     tags:
