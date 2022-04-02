@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --tag nidhaloff/${{github.repository}}:${{ steps.get_version.outputs.VERSION }}
+        run: docker build . --tag nidhaloff/deep-translator-api:${{ steps.get_version.outputs.VERSION }}
 
 
       - name: Check docker images
