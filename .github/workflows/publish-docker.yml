@@ -11,6 +11,7 @@ jobs:
 
   docker:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Get the tag version
         id: get_version
