@@ -6,9 +6,16 @@ name: Build and deploy Python app to Azure Web App - deep-translator-api
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - "v*"
 
 jobs:
+  push-docker:
+    uses: nidhaloff/deep-translator-api/.github/workflows/publish-docker.yml@main
+
   build:
+    needs: push-docker
     runs-on: ubuntu-latest
 
     steps:
