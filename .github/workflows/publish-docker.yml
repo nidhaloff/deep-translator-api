@@ -1,4 +1,4 @@
-name: publish-docker
+name: build and publish docker image to dockerhub
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - "v*"
 
 jobs:
-  test:
+  run-tests:
     uses: nidhaloff/deep-translator-api/.github/workflows/test.yml@main
 
-  docker:
+  build-push-docker:
     runs-on: ubuntu-latest
     needs: test
     steps:
