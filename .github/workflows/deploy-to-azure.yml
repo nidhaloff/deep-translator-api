@@ -5,7 +5,7 @@
 name: Build and deploy Python app to Azure Web App - deep-translator-api
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   build:
