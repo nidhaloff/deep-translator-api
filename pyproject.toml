@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "deep-translator-api"
-version = "0.1.0"
+version = "0.1.1"
 description = "API based on the deep-translator package"
 authors = ["nidhal baccouri <nidhalbacc@gmail.com>"]
 license = "MIT"

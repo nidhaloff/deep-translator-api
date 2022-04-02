@@ -42,7 +42,7 @@ import uvicorn
 
 
 # API version
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Constants for reusability as an endpoint and in the summary docs
 GOOGLE = "google"
