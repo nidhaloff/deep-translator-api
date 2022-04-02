@@ -1,0 +1,28 @@
+name: publish-docker
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  test:
+    uses: ${{github.repository}}/.github/workflows/test.yml@main
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the tag version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: docker login
+        run: |
+          docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
+
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag nidhaloff/${{github.repository}}:${{ steps.get_version.outputs.VERSION }}
+
+      - name: Docker Push
+        run: docker push nidhaloff/${{github.repository}}
