@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    uses: ${{github.repository}}/.github/workflows/test.yml@main
+    uses: nidhaloff/deep-translator-api/.github/workflows/test.yml@main
 
   docker:
     runs-on: ubuntu-latest
