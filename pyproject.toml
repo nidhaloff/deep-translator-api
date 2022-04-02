@@ -21,18 +21,3 @@ flake8 = "^4.0.1"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-steps:
-    - name: Get the tag version
-      id: get_version
-      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-
-    - name: docker login
-      run: |
-        docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
-
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag nidhaloff/${{github.repository}}:${{ steps.get_version.outputs.VERSION }}
-
-    - name: Docker Push
-      run: docker push nidhaloff/${{github.repository}}
